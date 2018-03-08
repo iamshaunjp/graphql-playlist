@@ -8,5 +8,5 @@ const BookType = new GraphQLObjectType({
         id: { type: GraphQLString },
         name: { type: GraphQLString },
         genre: { type: GraphQLString }
-    });
+    })
 });
