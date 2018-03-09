@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 
 const authorSchema = new Schema({
     name: String,
-    age: Number,
-    books: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Book'
-    }]
+    age: Number
 });
 
 module.exports = mongoose.model('Author', authorSchema);
