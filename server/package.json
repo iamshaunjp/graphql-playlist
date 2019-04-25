@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.2.1",
+    "lodash": "^4.17.11"
   }
 }
