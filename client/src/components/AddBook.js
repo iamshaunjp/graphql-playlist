@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo';
+
+// compose has been removed from react-apollo. Please see:
+// https://github.com/apollographql/react-apollo/issues/3330
 import { getAuthorsQuery, addBookMutation } from '../queries/queries';
 
 class AddBook extends Component {
