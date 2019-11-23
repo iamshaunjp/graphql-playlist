@@ -1,6 +1,6 @@
 const graphql = require('graphql');
 
-const { GraphQLObjectType, GraphQLString } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
 
 const BookType = new GraphQLObjectType({
   name: 'Book',
@@ -22,4 +22,8 @@ const RootQuery = new GraphQLObjectType({
       }
     }
   }
+});
+
+module.exports = new GraphQLSchema({
+  query: RootQuery
 });
