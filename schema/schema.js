@@ -5,9 +5,9 @@ const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
 
 //dummy data
 var books = [
-  { name: 'Night', genre: 'Non-Fiction', id: 1 },
-  { name: 'Chronicles of Narnia', genre: 'Fantasy', id: 2 },
-  { name: 'The City & The City', genre: 'Mystery', id: 3 }
+  { name: 'Night', genre: 'Non-Fiction', id: '1' },
+  { name: 'Chronicles of Narnia', genre: 'Fantasy', id: '2' },
+  { name: 'The City & The City', genre: 'Mystery', id: '3' }
 ];
 
 const BookType = new GraphQLObjectType({
@@ -27,7 +27,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLString } },
       resolve(parent, args) {
         // code to get data from database or other source!
-        return _.find(books, { id: args.id });
+        return _.find(books, { id: args.id }); // replace this with ES6's .find later
       }
     }
   }
