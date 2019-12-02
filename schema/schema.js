@@ -73,3 +73,5 @@ const RootQuery = new GraphQLObjectType({
 module.exports = new GraphQLSchema({
   query: RootQuery
 });
+
+// pick up at lesson 15
