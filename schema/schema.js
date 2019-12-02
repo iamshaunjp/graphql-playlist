@@ -11,9 +11,9 @@ var books = [
 ];
 
 const authors =  [
-  {name: 'Patrick Rothfuss', age: 44, id:'1'},
-  {name: 'Brandon Sanderson', age: 42, id:'2'},
-  {name: 'Terry Pratchett', age: 66, id:'3'},
+  {name: 'Elie Wiesel', age: 91, id:'1'},
+  {name: 'C.S. Lewis', age: 121, id:'2'},
+  {name: 'China Miéville', age: 47, id:'3'},
 ];
 
 const BookType = new GraphQLObjectType({
