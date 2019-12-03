@@ -8,7 +8,7 @@ const app = express();
 mongoose.connect('mongodb://adrian:fiac21@ds351628.mlab.com:51628/qgl-ninja');
 mongoose.connection.once('open', () => {
   console.log('connected to database');
-})
+});
 
 app.use('/graphql', graphqlHTTP({
   schema,
