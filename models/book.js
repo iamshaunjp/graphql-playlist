@@ -7,4 +7,4 @@ const bookSchema = new Schema({
   authorID: String
 });
 
-module.exports = mongoose.mode('Book', bookSchema);
+module.exports = mongoose.model('Book', bookSchema);
