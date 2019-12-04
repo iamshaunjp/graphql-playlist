@@ -90,7 +90,8 @@ const Mutation = new GraphQLObjectType({
 });
 
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation: Mutation
 });
 
 // pick up at lesson 15
