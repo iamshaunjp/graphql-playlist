@@ -85,6 +85,22 @@ const Mutation = new GraphQLObjectType({
         });
         return author.save();
       }
+    },
+    addBook: {
+      type: BookType,
+      args: {
+        name: { type: GraphQLString },
+        genre: { type: GraphQLString },
+        authorID: { type: GraphQLID }
+      },
+      resolve(parent, args) {
+        let book = new Book({
+          name: args.name,
+          genre: args.genre,
+          authorID: args.authorID
+        });
+        return book.save();
+      }
     }
   }
 });
@@ -93,5 +109,3 @@ module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation
 });
-
-// pick up at lesson 15
