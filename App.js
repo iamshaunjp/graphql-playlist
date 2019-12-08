@@ -1,11 +1,13 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
  
 const app = express();
+dotenv.config({path: __dirname + '/.env'});
 
-mongoose.connect('mongodb://adrian:fiac21@ds351628.mlab.com:51628/qgl-ninja');
+mongoose.connect(process.env['DB_URL']);
 mongoose.connection.once('open', () => {
   console.log('connected to database');
 });
