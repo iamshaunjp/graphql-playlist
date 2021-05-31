@@ -2,26 +2,43 @@ import React, { Component } from 'react';
 import { gql } from 'apollo-boost';
 import { graphql } from 'react-apollo';
 
-const getBooksQuery = gql`
+const queryAllUser = gql`
     {
-        books {
-            name
-            id
+        queryAllUser
+        {
+            firstName,
+            email
         }
     }
 `;
 
-class BookList extends Component {
-    render(){
-        console.log(this.props);
-        return(
-            <div>
-                <ul id="book-list">
-                    <li>Book name</li>
-                </ul>
-            </div>
-        );
+const displayData = (data) =>
+{
+    if(data.loading)
+    {
+        return <div>loading data</div>
+    }
+    else{
+        return( 
+            <li>
+                <li>{data.queryAllUser.firstName}</li>
+                <li>{data.queryAllUser.email}</li>
+            </li>
+        )
     }
 }
+const BookList = (props)=> 
+{       
+    // var tt = displayData(props.data)
 
-export default graphql(getBooksQuery)(BookList);
+    console.log(props);
+    return(
+        <div>
+            <ul id="book-list">
+                {displayData(props.data)}
+            </ul>
+        </div>
+    );
+}
+
+export default graphql(queryAllUser)(BookList);
