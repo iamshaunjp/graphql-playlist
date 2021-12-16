@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const _ = require('lodash');
 
-const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema } = graphql;
 
 // dummy data
 var books = [
@@ -16,6 +16,15 @@ const BookType = new GraphQLObjectType({
         id: { type: GraphQLString },
         name: { type: GraphQLString },
         genre: { type: GraphQLString }
+    })
+});
+
+const AuthorType = new GraphQLObjectType({
+    name: 'Author',
+    fields: ( ) => ({
+        id: { type: GraphQLString },
+        name: { type: GraphQLString },
+        age: { type: GraphQLInt }
     })
 });
 
