@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://povigard:turock5209%23%23@cluster0.p8p18.mongodb.net/Cluster0?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://povigard:turock5209%23%23@cluster0.p8p18.mongodb.net/test?retryWrites=true&w=majority')
 mongoose.connection.once('open', () => {
     console.log('connected to database');
 })
